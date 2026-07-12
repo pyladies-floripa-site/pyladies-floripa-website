@@ -1,0 +1,154 @@
+.stack {
+  position: relative;
+  width: min(100%, 20rem);
+  aspect-ratio: 541 / 616;
+  margin-inline: auto;
+  perspective: 1000px;
+  cursor: grab;
+  touch-action: none;
+  overscroll-behavior: contain;
+  user-select: none;
+  -webkit-user-select: none;
+  outline: none;
+  overflow: visible;
+  padding: 52px 88px 12px 0;
+}
+
+.stackStatic {
+  cursor: default;
+  touch-action: auto;
+}
+
+.stack:focus-visible {
+  box-shadow: 0 0 0 3px rgb(94 194 208 / 0.45);
+  border-radius: 1.125rem;
+}
+
+.stackDragging,
+.stackDragging .card {
+  cursor: grabbing;
+}
+
+.hero {
+  width: min(100%, 28rem);
+  margin-inline: 0;
+  aspect-ratio: 4 / 3;
+  padding: 36px 72px 10px 0;
+}
+
+.timeline {
+  width: min(100%, 20rem);
+}
+
+.card {
+  position: absolute;
+  inset: 0;
+  border-radius: 1.125rem;
+  overflow: hidden;
+  border: 1px solid rgb(255 255 255 / 0.12);
+  box-shadow:
+    0 0 0 1px rgb(1 31 70 / 0.06),
+    0 20px 48px rgb(1 31 70 / 0.2);
+  background: var(--color-placeholder);
+  transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.card:not(.cardFront) {
+  pointer-events: none;
+}
+
+.cardFront {
+  touch-action: none;
+}
+
+.cardDragging {
+  transition: none;
+  will-change: transform;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.hero .card {
+  border: 6px solid var(--color-white);
+  border-radius: 50px;
+  box-shadow: 4px 4px 40px rgb(0 0 0 / 0.1);
+  background: var(--color-white);
+}
+
+.timeline .card {
+  border: 6px solid var(--color-white);
+  border-radius: 30px;
+  box-shadow: 4px 4px 40px rgb(0 0 0 / 0.1);
+  background: var(--color-white);
+}
+
+.hint {
+  position: absolute;
+  bottom: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--color-text);
+  opacity: 0.5;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (min-width: 640px) {
+  .stack,
+  .timeline {
+    width: min(100%, 22rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .stack,
+  .timeline {
+    width: 100%;
+    max-width: 26rem;
+    margin-inline: 0;
+  }
+
+  .hero {
+    width: min(100%, 32rem);
+    max-width: 32rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero .card,
+  .timeline .card {
+    border-radius: 30px;
+  }
+
+  .hint {
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+}

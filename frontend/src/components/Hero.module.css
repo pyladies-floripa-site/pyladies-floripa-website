@@ -1,0 +1,143 @@
+:global(.section).hero {
+  padding-top: calc(var(--header-offset) + 48px);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+.content {
+  flex: 1 1 440px;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.socialProof {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatars {
+  display: flex;
+  align-items: center;
+}
+
+.avatars img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  margin-right: -10px;
+  animation: avatarPop 0.55s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+.avatars img:nth-child(2) {
+  animation-delay: 0.08s;
+}
+
+.avatars img:nth-child(3) {
+  animation-delay: 0.16s;
+}
+
+@keyframes avatarPop {
+  from {
+    opacity: 0;
+    transform: scale(0.6) translateY(6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .avatars img {
+    animation: none;
+  }
+}
+
+.avatars img:last-child {
+  margin-right: 0;
+}
+
+.socialText {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.title {
+  font-size: clamp(32px, 4vw, 46px);
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.highlight {
+  color: var(--color-teal);
+}
+
+.subtitle {
+  font-size: clamp(16px, 2vw, 20px);
+  font-weight: 300;
+  line-height: 1.2;
+  opacity: 0.8;
+}
+
+.cta {
+  align-self: flex-start;
+}
+
+.photosReveal {
+  flex: 1 1 500px;
+  max-width: 540px;
+  min-width: 0;
+  display: flex;
+  justify-content: flex-end;
+  overflow: visible;
+  padding: 8px 0;
+}
+
+@media (max-width: 1024px) {
+  .inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .content {
+    flex: 1;
+    align-items: center;
+  }
+
+  .socialProof {
+    justify-content: center;
+  }
+
+  .cta {
+    align-self: center;
+  }
+
+  .photosReveal {
+    flex: 1;
+    width: 100%;
+    max-width: none;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  :global(.section).hero {
+    padding-top: calc(var(--header-offset) + 32px);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding-bottom: 20px;
+  }
+}

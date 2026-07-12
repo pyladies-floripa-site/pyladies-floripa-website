@@ -1,0 +1,22 @@
+{
+  "name": "PyLadies Floripa",
+  "short_name": "PyLadies",
+  "description": "PyLadies Floripa: workshops, meetups e comunidade Python para mulheres em Florianópolis, SC.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fffbf5",
+  "theme_color": "#5ec2d0",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

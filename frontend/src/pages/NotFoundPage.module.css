@@ -1,0 +1,55 @@
+.section {
+  padding-top: calc(var(--header-offset) + 40px);
+  padding-bottom: 80px;
+}
+
+.inner {
+  max-width: 560px;
+  text-align: center;
+}
+
+.code {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-teal);
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 600;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.text {
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.55;
+  opacity: 0.85;
+  margin-bottom: 28px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.link {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-teal);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.link:focus-visible {
+  outline: 3px solid rgb(94 194 208 / 0.45);
+  outline-offset: 3px;
+  border-radius: 4px;
+}

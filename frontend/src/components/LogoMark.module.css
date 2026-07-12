@@ -1,0 +1,30 @@
+.wrapper {
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.image {
+  position: absolute;
+  width: 206%;
+  height: 221%;
+  max-width: none;
+  left: -55%;
+  top: -39%;
+  object-fit: cover;
+}
+
+.wrapperContained {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageContained {
+  position: static;
+  width: 91%;
+  height: 91%;
+  max-width: none;
+  object-fit: contain;
+}

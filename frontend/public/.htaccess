@@ -1,0 +1,57 @@
+# SPA fallback (React Router)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
+
+# HTTP Basic Auth apenas para /portal
+# Substitua SEU_USUARIO pelo usuário da sua conta Hostgator (cPanel).
+# O arquivo .htpasswd deve ficar em public_html junto com o site.
+<IfModule mod_authn_file.c>
+  <IfModule mod_authz_core.c>
+    <IfModule mod_setenvif.c>
+      SetEnvIf Request_URI "^/portal" portal_auth_required
+    </IfModule>
+
+    AuthType Basic
+    AuthName "Portal PyLadies Floripa"
+    AuthUserFile "/home/SEU_USUARIO/public_html/.htpasswd"
+
+    <RequireAny>
+      Require not env portal_auth_required
+      Require valid-user
+    </RequireAny>
+  </IfModule>
+</IfModule>
+
+# Bloqueia acesso direto ao arquivo de senhas
+<Files ".htpasswd">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+</Files>
+
+# Security headers
+<IfModule mod_headers.c>
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+# Cache static assets
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/webp "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType text/css "access plus 1 week"
+  ExpiresByType application/javascript "access plus 1 week"
+</IfModule>

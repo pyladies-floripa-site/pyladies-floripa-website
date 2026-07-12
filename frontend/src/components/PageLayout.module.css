@@ -1,0 +1,103 @@
+.page {
+  position: relative;
+  overflow-x: clip;
+  background-color: var(--color-bg);
+  min-height: 100vh;
+}
+
+.skipLink {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 200;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: var(--color-teal);
+  color: var(--color-text);
+  font-size: 14px;
+  font-weight: 600;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.skipLink:focus,
+.skipLink:focus-visible {
+  clip: auto;
+  clip-path: none;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  outline: 3px solid rgb(94 194 208 / 0.45);
+  outline-offset: 3px;
+}
+
+.page main:focus {
+  outline: none;
+}
+
+.glowTop,
+.glowLeft {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  overflow: visible;
+}
+
+.glowTop {
+  top: -82px;
+  left: calc(91.67% - 167px);
+  width: 345px;
+  height: 345px;
+}
+
+.glowTop::before {
+  content: '';
+  position: absolute;
+  inset: -173.91%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(216, 141, 28, 0.28) 0%,
+    rgba(216, 141, 28, 0.12) 22%,
+    rgba(216, 141, 28, 0.04) 45%,
+    transparent 70%
+  );
+}
+
+.glowLeft {
+  top: 298px;
+  left: -70px;
+  width: 412px;
+  height: 412px;
+}
+
+.glowLeft::before {
+  content: '';
+  position: absolute;
+  inset: -145.63%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(216, 141, 28, 0.22) 0%,
+    rgba(216, 141, 28, 0.1) 22%,
+    rgba(216, 141, 28, 0.03) 45%,
+    transparent 70%
+  );
+}
+
+.page > main,
+.page > footer {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .glowTop,
+  .glowLeft {
+    display: none;
+  }
+}

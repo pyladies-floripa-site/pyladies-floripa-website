@@ -1,0 +1,21 @@
+# Dependencies
+frontend/node_modules/
+
+# Build
+frontend/dist/
+
+# Environment
+frontend/.env
+.env
+.env.*
+!.env.example
+!frontend/.env.example
+
+# Secrets
+frontend/public/.htpasswd
+
+# OS
+.DS_Store
+
+# Logs
+*.log

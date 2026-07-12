@@ -1,0 +1,45 @@
+.reveal {
+  opacity: 0;
+  transition-property: opacity, transform;
+  transition-duration: var(--reveal-duration, 650ms);
+  transition-delay: var(--reveal-delay, 0ms);
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.visible {
+  opacity: 1;
+  transform: none !important;
+}
+
+.up {
+  transform: translateY(24px);
+}
+
+.down {
+  transform: translateY(-24px);
+}
+
+.left {
+  transform: translateX(-36px);
+}
+
+.right {
+  transform: translateX(36px);
+}
+
+.fade {
+  transform: none;
+}
+
+.scale {
+  transform: scale(0.94);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none !important;
+    transition: none;
+  }
+}
