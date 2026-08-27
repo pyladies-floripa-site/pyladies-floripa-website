@@ -1,0 +1,87 @@
+.partners {
+  padding: 4rem 0;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.headingBlock {
+  text-align: center;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 300;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.title {
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem 3rem;
+  width: 100%;
+}
+
+.partnerCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  /* Animação suave para o hover */
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Efeito Hover: Apenas eleva o card suavemente 4px para cima */
+.partnerCard:hover {
+  transform: translateY(-4px);
+}
+
+.logo {
+  max-width: 120px;
+  max-height: 55px;
+  width: auto;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  /* Sem filtro de grayscale: preserva cores originais com boa visibilidade */
+  opacity: 0.9;
+  transition: opacity 0.25s ease;
+}
+
+.inverted {
+  filter: brightness(0);
+}
+
+/* No hover, atinge a opacidade total */
+.partnerCard:hover .logo {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .partners {
+    padding: 3rem 0;
+  }
+
+  .grid {
+    gap: 1.5rem 2rem;
+  }
+
+  .logo {
+    max-width: 130px;
+    max-height: 45px;
+  }
+}
