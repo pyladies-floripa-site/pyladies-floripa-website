@@ -1,6 +1,7 @@
 // src/components/Partners.tsx
 import Reveal from './Reveal'
 import { partnersData } from '../data/partners'
+import  Separator from './Separator'
 import styles from './Partners.module.css'
 
 export default function Partners() {
@@ -10,10 +11,10 @@ export default function Partners() {
     <section className={`section ${styles.partners}`} id="parceiros">
       <div className={`container ${styles.inner}`}>
         <Reveal variant="up">
-          <div className={styles.headingBlock}>
+          <header className={styles.headingBlock}>
             <p className={styles.label}>Apoio & Parcerias</p>
             <h2 className={styles.title}>Quem constrói junto com a gente</h2>
-          </div>
+          </header>
         </Reveal>
 
         <Reveal variant="up">
@@ -34,6 +35,11 @@ export default function Partners() {
                   loading="lazy"
                   decoding="async"
                 />
+                
+                  <div className={styles.cardFooter}>
+                    <span className={styles.partnerName}>{partner.name}</span>
+                    <Separator />
+                  </div>
               </a>
             ))}
           </div>
