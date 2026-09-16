@@ -6,6 +6,7 @@ import About from '../components/About'
 import Activities from '../components/Activities'
 import Impact from '../components/Impact'
 import JsonLd from '../components/JsonLd'
+import Partners from '../components/Partners'
 import { usePageSeo } from '../lib/seo'
 import { buildHomeStructuredData } from '../lib/structuredData'
 import { DEFAULT_DESCRIPTION } from '../lib/site'
@@ -35,6 +36,7 @@ export default function Home() {
         <About />
         <Activities />
         <Impact />
+        <Partners />
       </PageLayout>
     </>
   )

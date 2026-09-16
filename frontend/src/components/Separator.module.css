@@ -1,0 +1,21 @@
+.dotSeparator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 0.5rem;
+}
+
+.dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: currentColor;
+  opacity: 0.25;
+}
+
+.active {
+  opacity: 0.85;
+  background-color: var(--color-orange);
+  transform: scale(1.3);
+}
